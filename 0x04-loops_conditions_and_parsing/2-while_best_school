@@ -1,0 +1,10 @@
+!#/usr/bin/env bash
+#do the same thing as the script 1-best schoool but use while loop
+
+count=0
+
+while [ $count -lt 10 ]
+do 
+	echo "Best School"
+	((count++ ))
+done
