@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Create a key
+ssh-keygen -b 4096 -f school
