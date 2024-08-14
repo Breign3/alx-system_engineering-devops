@@ -1,0 +1,110 @@
+[34m
+* Datadog Agent 7 install script v1.33.0
+[0m
+[34m
+* Installing apt-transport-https, curl and gnupg
+[0m
+Hit:1 http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu focal InRelease
+Hit:2 http://repo.mysql.com/apt/ubuntu bionic InRelease
+Hit:3 https://deb.nodesource.com/node_14.x focal InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal InRelease
+Get:5 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+Hit:7 https://download.docker.com/linux/ubuntu focal InRelease
+Hit:8 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Get:9 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [1,257 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [3,885 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4,351 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1,543 kB]
+Ign:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1,219 kB]
+Ign:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1,219 kB]
+Ign:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+Ign:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+Err:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+  Error writing to output file - write (28: No space left on device) [IP: 91.189.91.82 80]
+Fetched 11.3 MB in 18s (645 kB/s)
+Reading package lists...
+W: Target Packages (mysql-5.7/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list.d/mysql.list:1 and /etc/apt/sources.list.d/mysql.list:2
+W: Target Packages (mysql-5.7/binary-all/Packages) is configured multiple times in /etc/apt/sources.list.d/mysql.list:1 and /etc/apt/sources.list.d/mysql.list:2
+W: Target Packages (stable/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list:50 and /etc/apt/sources.list.d/docker.list:1
+W: Target Packages (stable/binary-all/Packages) is configured multiple times in /etc/apt/sources.list:50 and /etc/apt/sources.list.d/docker.list:1
+E: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/focal-updates/universe/binary-amd64/Packages  Error writing to output file - write (28: No space left on device) [IP: 91.189.91.82 80]
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+W: Target Packages (stable/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list:50 and /etc/apt/sources.list.d/docker.list:1
+W: Target Packages (stable/binary-all/Packages) is configured multiple times in /etc/apt/sources.list:50 and /etc/apt/sources.list.d/docker.list:1
+W: Target Packages (mysql-5.7/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list.d/mysql.list:1 and /etc/apt/sources.list.d/mysql.list:2
+W: Target Packages (mysql-5.7/binary-all/Packages) is configured multiple times in /etc/apt/sources.list.d/mysql.list:1 and /etc/apt/sources.list.d/mysql.list:2
+[31m'apt-get update' failed, the script will not install the latest version of apt-transport-https.[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (7.68.0-1ubuntu2.23).
+gnupg is already the newest version (2.2.19-3ubuntu2.2).
+gnupg set to manually installed.
+apt-transport-https is already the newest version (2.0.10).
+0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
+[34m
+* Installing APT package sources for Datadog
+[0m
+gpg: directory '/root/.gnupg' created
+gpg: /root/.gnupg/trustdb.gpg: trustdb created
+gpg: key E6266D4AC0962C7D: public key "Datadog, Inc. APT key (2023-04-20) (APT key) <package+aptkey@datadoghq.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg: key 0D826EB906462314: public key "Datadog, Inc. APT key (2024-05-15) (APT key) <package+aptkey@datadoghq.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg: key E6266D4AC0962C7D: "Datadog, Inc. APT key (2023-04-20) (APT key) <package+aptkey@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: key 32637D44F14F620E: public key "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg: key D3A80E30382E94DE: public key "Datadog, Inc <package@datadoghq.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+Ign:1 https://apt.datadoghq.com stable InRelease
+Get:2 https://apt.datadoghq.com stable Release [26.0 kB]
+Get:3 https://apt.datadoghq.com stable Release.gpg [801 B]
+Get:4 https://apt.datadoghq.com stable/7 all Packages [1,073 B]
+Get:5 https://apt.datadoghq.com stable/7 amd64 Packages [78.1 kB]
+Fetched 106 kB in 1s (106 kB/s)
+Reading package lists...
+  [33mInstalling package(s): datadog-agent datadog-signing-keys
+[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  datadog-agent datadog-signing-keys
+0 upgraded, 2 newly installed, 0 to remove and 11 not upgraded.
+Need to get 273 MB of archives.
+After this operation, 1,265 MB of additional disk space will be used.
+W: --force-yes is deprecated, use one of the options starting with --allow instead.
+W: Target Packages (stable/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list:50 and /etc/apt/sources.list.d/docker.list:1
+W: Target Packages (stable/binary-all/Packages) is configured multiple times in /etc/apt/sources.list:50 and /etc/apt/sources.list.d/docker.list:1
+W: Target Packages (mysql-5.7/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list.d/mysql.list:1 and /etc/apt/sources.list.d/mysql.list:2
+W: Target Packages (mysql-5.7/binary-all/Packages) is configured multiple times in /etc/apt/sources.list.d/mysql.list:1 and /etc/apt/sources.list.d/mysql.list:2
+E: You don't have enough free space in /var/cache/apt/archives/.
+[31mERROR
+Failed to install one or more packages, sometimes it may be
+due to another APT source failing. See the logs above to
+determine the cause.
+If the cause is unclear, please contact Datadog support.
+*****
+
+It looks like you hit an issue when trying to install the Datadog Agent.
+
+    
+
+Troubleshooting and basic usage information for the Datadog Agent are available at:
+
+    https://docs.datadoghq.com/agent/basic_agent_usage/
+[0m
+Do you want to send a failure report to Datadog (including ddagent-install.log)? (y/[n]) Enter an email address so we can follow up: OKA notification has been sent to Datadog with the contents of ddagent-install.log
+
+If you are still having problems, please send an email to support@datadoghq.com
+with the contents of ddagent-install.log and any information you think would be
+useful and we will do our very best to help you solve your problem.
